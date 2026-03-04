@@ -1,0 +1,250 @@
+/* --- 1. Global Styles & Variables --- */
+:root {
+    --gold: #d4a373;
+    --dark: #1a1a1a;
+    --light: #fefae0;
+    --accent: #bc6c25;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* 正文使用清晰现代的 Lato 字体 */
+    font-family: 'Lato', sans-serif;
+    background-color: #fdfaf5;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* 标题使用优雅经典的 Playfair Display 衬线体 */
+h1, h2, h3, .subtitle {
+    font-family: 'Playfair Display', serif;
+}
+
+/* --- 2. Hero Section --- */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+.btn-main {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 30px;
+    transition: 0.3s;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-main:hover {
+    background-color: var(--gold);
+    transform: scale(1.1);
+}
+
+/* --- 3. Layout Containers --- */
+.container {
+    max-width: 1100px;
+    margin: -50px auto 50px; 
+    position: relative;
+    z-index: 10;
+}
+
+.card {
+    background: white;
+    padding: 50px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--dark);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    display: block;
+    margin: 15px auto;
+}
+
+/* --- 4. Featured Grid --- */
+.featured-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.featured-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 400px;
+}
+
+.featured-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.featured-item:hover img {
+    transform: scale(1.1);
+}
+
+.item-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+}
+
+.item-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+/* --- 5. Category Tiles --- */
+.category-tiles {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.tile {
+    flex: 1;
+    text-align: center;
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.tile:hover {
+    border-color: var(--gold);
+    background-color: #fffaf0;
+}
+
+.tile .icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+/* --- 6. Table Styles --- */
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: var(--light);
+    color: var(--accent);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+}
+
+/* --- 7. Video Wrapper --- */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    margin-top: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- 8. Footer --- */
+footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.link-hkbu {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.link-hkbu:hover {
+    color: white;
+    border-color: white;
+}
+
+.copyright {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+/* --- 9. Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 3.5rem; }
+    .featured-grid { grid-template-columns: 1fr; }
+    .category-tiles { flex-direction: column; }
+    .card { padding: 30px 20px; }
+}
